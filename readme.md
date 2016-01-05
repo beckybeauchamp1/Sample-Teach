@@ -1,11 +1,11 @@
 
-#Creating Real Time Web Applications
+#Real Time Web Applications
 
-#Summary
+**Summary**
 
 In this lesson, we will be comparing Ajax and WebSockets in creating Real Time Web Applications
 
-#Learning Objectives:**
+**Learning Objectives:**
 
 •	Recap on the importance of Ajax
 •	Recap differences between Asynchronous and Synchronous
@@ -13,7 +13,7 @@ In this lesson, we will be comparing Ajax and WebSockets in creating Real Time W
 •	Explain what WebSockets are and how they differ from using Ajax
 •	List the Advantages to using WebSockets in our application
 
-#Ajax Recap**(2/15)
+**Ajax Recap**(2/15)
 
 **Can someone remind me of what Ajax is and why it's important in the applications we have been developing?**
 
@@ -25,7 +25,7 @@ In this lesson, we will be comparing Ajax and WebSockets in creating Real Time W
 
 **But what if our application needs to provide real-time updates? How would we go about updating our view to mirror changes from our backend more seamlessly?**
 
-#What is Ajax Polling?(2/15)
+**What is Ajax Polling?**(2/15)
 
 We could use Ajax and “polling” to accomplish this by sending periodic requests for updates to the server, and dynamically manipulating the DOM to reflect those changes. This would essentially create a connection and keep it open for a period of time in which the client can receive data from server. An example is show below using a timeout
 
