@@ -1,11 +1,10 @@
-
 #Real Time Web Applications
 
-**Summary**
+##Summary
 
 In this lesson, we will be comparing Ajax and WebSockets in creating Real Time Web Applications
 
-**Learning Objectives:**
+## Learning Objectives:
 
 •	Recap on the importance of Ajax
 •	Recap differences between Asynchronous and Synchronous
@@ -13,7 +12,7 @@ In this lesson, we will be comparing Ajax and WebSockets in creating Real Time W
 •	Explain what WebSockets are and how they differ from using Ajax
 •	List the Advantages to using WebSockets in our application
 
-**Ajax Recap**(2/15)
+## Ajax Recap
 
 **Can someone remind me of what Ajax is and why it's important in the applications we have been developing?**
 
@@ -23,9 +22,9 @@ In this lesson, we will be comparing Ajax and WebSockets in creating Real Time W
 
 -As developers we want a way to make requests to the server from the client side without a full page refresh, Ultimately to make our applications faster and improve user experience.
 
-**But what if our application needs to provide real-time updates? How would we go about updating our view to mirror changes from our backend more seamlessly?**
+**But what if our application needs continuous real-time updates? 
 
-**What is Ajax Polling?**(2/15)
+## What is Ajax Polling?
 
 We could use Ajax and “polling” to accomplish this by sending periodic requests for updates to the server, and dynamically manipulating the DOM to reflect those changes. This would essentially create a connection and keep it open for a period of time in which the client can receive data from server. An example is show below using a timeout
 
@@ -48,7 +47,7 @@ We have many options as developers with strong Front-End Frameworks such as Angu
 There are many different resources available to us as developers for helping us create more real time web applications. Angular has a third party api called Firebase or Pusher which helps to manage this process.
 
 
-**What are Web Sockets?**(2/5)
+## What are Web Sockets?
 
 WebSockets are a TCP based Protocol application that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed. Once a connection is established, it stays open as long as needed. Ajax is a one-way request that's always initated by the client, and when the server has sent the response, the connection will close. However with WebSockets both the client and server can send requests and the connection is kept open. Because WebSockets are built on the TCP protocol, which is a stateful protocol, we can accomplish this connection.
 
@@ -56,11 +55,7 @@ As you can imagine, this is pretty powerful when we need to create applications 
 
 Below, we are going to be using one API available, Socket.io which allows us to easily establish a WebSocket in our application. We are going to be using Nodejs and Expressjs along side Socket.io to build a simple chat messaging application.
 
-**Example of WebSites Using WebSockets(2/3)**
-
-**We Do**
-
-**Chat Messaging App Example**
+## We Do: Instant Chat Messaging App
 
 The starter code contains all of the dependencies needed for this application. Please clone it down to your local repositories.
 
@@ -130,24 +125,18 @@ With socket.io, .emit method is available which emits an event to the socket ide
 
 Also, we are sending "message" consistently on the client and server, but please note you could name this anything including "pizza" and as long as it's consistent, it will work the same. Socket.io allows you to do this and create custom events.
 
-Finally, at localhost://4000, you should be able to send messages that appear on your application's webpage! That's it for the code along, feel free to expand on this application and look up additional methods through the documentation:
+Finally, at localhost://4000, you should be able to send messages that appear on your application's webpage! That's it for the code along, feel free to expand on this application and look up additional methods through the documentation. 
 
-**Take Home**
+## Take Home
 
 In Summary, we have a lot of resources available as developers to send data over the web asynchronously when creating a real time web application, such as Ajax and WebSockets.
 
 Other solutions worth looking into are Firebase (that also integrations well as a traditional hosted-service), SailsJS, SocketStream, Meteor(full stack framework built on Node.js) and a number of solutions listed as a no-backend solution. However, as we continue to build more applications that rely on real-time data, it appears WebSockets could be a useful resource in helping us accomplish our domain.
 
-**Additional Resources**
+## Additional Resources
 
-http://www.sitepoint.com/making-http-requests-in-node-js/
-
-http://www.leggetter.co.uk/2013/12/09/choosing-realtime-web-app-tech-stack.html
-
-http://blog.arungupta.me/rest-vs-websocket-comparison-benchmarks/
-
-http://www.dotnetcurry.com/nodejs/1220/create-web-socket-server-nodejs-for-real-time
-
-http://socketo.me/docs/
-
-https://devcenter.heroku.com/articles/node-websockets
+- http://www.sitepoint.com/making-http-requests-in-node-js/
+- http://www.leggetter.co.uk/2013/12/09/choosing-realtime-web-app-techstack.html
+- http://blog.arungupta.me/rest-vs-websocket-comparison-benchmarks/
+- http://www.dotnetcurry.com/nodejs/1220/create-web-socket-server-nodejs-forreal-time
+- https://devcenter.heroku.com/articles/node-websockets
