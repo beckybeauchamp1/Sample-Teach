@@ -10,32 +10,49 @@
 
 **We have been talking a lot about Ajax throughout this course, why it's relevant and important in the applications we have been developing?**
 
-**PRE-AJAX ERA:**
+**PRE-AJAX:**
 any user interaction with a webpage or web application required an updated version of the page to be sent to the browser and rendered a full new html page. **This was very slow, and a bad user experience!**
 
-**AJAX ERA:**
+**INTRODUCE AJAX:**
 (Asynchronous JavaScript and XML) consists of small exchanges of data from the client to the the server, so that the entire web page does not have to be reloaded each time the user makes a change, aka we can send data asynchronously through an HTTP request. **This made our applications faster and vastly improved user experience!**
 
-**POST AJAX ERA(ish):**
+**POST AJAX:**
 A lot of Front End Frameworks today Angular, Backbone, Meteor, etc.. help with making Ajax requests easier for us as developers. However, on applications that use real time data, such as real time gaming, the continuous opening and closing of ajax http requests creates a lot of overhead, and for certain applications, especially those that want rapid responses or real time interactions or display streams of data, it can be a difficult process to simulate
 
 ##What are WebSockets?
 
-WebSockets are a TCP based Protocol and API through JavaScript that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed.
+WebSockets are a TCP based Protocol and API that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed.
+
+-A Socket could be compared or visualized as a two-way pipe connected between nodes (client and server), where one end is attached to a browser and the other end to a Web server. WebSocket protocol enables a continuous flow of communication without any need to reload the new page in the browser to reflect information changes received from the server(same effect as AJAX!)
 
 **Turn & Talk: What do think this means and why might we use it in our applications?**(30 seconds)
-
 
 
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_unsynchronised%20communication%20-%20New%20Page.png)
 
 _Traditional Request-Response Client-Server Model_
 
+
+
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_Communication%20is%20usually%20unsynchronized%2C%20i.e.%20the%20client%20requests%2C%20the%20server%20responds%20-%20New%20Page1.png)
 
 _WebSockets Bi-directional connection_
 
 
+
+**How Does it Work**
+
+-Simplifed Version: Every WebSocket starts with an HTTP request ! Any network communications that use the WebSocket start with an opening HTTP handshake. This handshake upgrades the connection from HTTP to the WebSocket protocol.
+
+A Request might Look Something Along These Lines:
+```
+GET /chat HTTP/1.1
+Host: example.com:8000
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+Sec-WebSocket-Version: 13
+```
 
 ###WebSockets VS Ajax
 
@@ -47,15 +64,17 @@ _WebSockets Bi-directional connection_
 
 - Allows a sort of channel that remains open between the client and the server. The browser and the server stay connected to each other and can exchange messages, in one direction and the other, through this channel. Now, the server can decide on its own to send a message to the client
 
-**Benefits to Using WebSockets:**
-- Bi-directional messages between Server and Client
+**Why would we use WebSockets?**
+- Allows Bi-directional messages between Server and Client
 - Speed, it's Fast!
-- Connection stays open as long as needed
-- Useful tool in applications that require real-time data
+- Open Connection between Client and Server
+- Useful for Real Time Applications
+
+
+Please note there are MANY RESOURCES available to help us create a WebSocket connection OR approach simulating real time data in our applications, but it entirely depends on our domain and what problem we are trying to solve when choosing a technology to implement in our applications. 
 
 We will be using one available resource Socket.io, which allows us to easily to utlize a WebSocket in our application. It is available as a module with Node.js and we will be using it in a code exercise below. 
 
-Please note there are MANY RESOURCES available to help us create a WebSocket connection OR approach simulating real time data in our applications, but it entirely depends on our domain and what problem we are trying to solve when choosing a technology to implement in our applications. 
 
 For Example, Google Star Wars Game using uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone:
 https://lightsaber.withgoogle.com/experience
@@ -135,7 +154,7 @@ Finally, on your browser, you should be able to send messages that appear on you
 
 - Socket.io is a Node.js module based on WebSockets that allows users to communicate continuously, in real time, with the server when the page is loaded.
 
-- The server and the client communicate by sending each other events through socket.emit() )and listening to the events with socket.on() methods
+- The server and the client communicate by sending each other events through socket.emit() and listening to the events with socket.on() methods
 
 - As we continue to build more applications that rely on real-time data, it appears WebSockets could be a useful resource or nonetheless, hopefully provoke thought into possible ways of trying to achieve a real time application experience for our users. 
 
