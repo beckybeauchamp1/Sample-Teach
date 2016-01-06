@@ -41,9 +41,7 @@ WebSockets are a TCP based Protocol and API that establishes a single, bi-direct
 
 ###How Does it Work?
 
-- Simplifed Version: Every WebSocket Connection starts with an HTTP GET request from the client to the server ! This is called or refered to as the _"handshake"_. This handshake upgrades the connection from HTTP to the WebSocket protocol. 
-
-An Example of this might look Something Along These Lines:
+Simplifed Version: Every WebSocket Connection starts with an HTTP GET request from the client to the server ! This is called or refered to as the _"handshake"_. This handshake upgrades the connection from HTTP to the WebSocket protocol. An Example of this might look Something Along These Lines:
 
 ```
 GET /chat HTTP/1.1
@@ -53,7 +51,7 @@ Connection: Upgrade
 Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
 Sec-WebSocket-Version: 13
 ```
-This HTTP GET request carries with it a _Upgrade: websocket_ header and _Connection: upgrade_ header, telling the server that it wants to begin a WebSocket connection
+_This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***Connection: upgrade*** header, telling the server that it wants to begin a WebSocket connection_
 
 ###WebSockets VS Ajax
 
