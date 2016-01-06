@@ -24,7 +24,7 @@ A lot of Front End Frameworks today Angular, Backbone, Meteor, etc.. help with m
 
 WebSockets are a TCP based Protocol and API that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed.
 
--A Socket could be compared or visualized as a two-way pipe connected between nodes (client and server), where one end is attached to a browser and the other end to a Web server. WebSocket protocol enables a continuous flow of communication without any need to reload the new page in the browser to reflect information changes received from the server(same effect as AJAX!)
+-A Socket could be compared or visualized as a two-way pipe connected between nodes (client and server), where one end is attached to a browser and the other end to a Web server. The WebSocket protocol enables a continuous flow of communication without any need to reload the new page in the browser to reflect information changes received from the server(should sound familiar....)
 
 **Turn & Talk: What do think this means and why might we use it in our applications?**(30 seconds)
 
