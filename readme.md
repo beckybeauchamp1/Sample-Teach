@@ -6,27 +6,32 @@
 •	List the advantages to using WebSockets in our application
 •	Implement Socket.io to create an Instant Chat Messaging App
 
-##Ajax Recap
+##Ajax Recap:
 
 **We have been talking a lot about Ajax throughout this course, can someone remind to me why it's relevant and important in the applications we have been developing?**
 
--PRE-AJAX ERA: any user interaction with a webpage or web application required an updated version of the page to be sent to the browser and rendered a full new html page. **This was very slow, and a bad user experience!**
+###PRE-AJAX ERA:
+any user interaction with a webpage or web application required an updated version of the page to be sent to the browser and rendered a full new html page. **This was very slow, and a bad user experience!**
 
--AJAX ERA: (Asynchronous JavaScript and XML) consists of small exchanges of data from the client to the the server, so that the entire web page does not have to be reloaded each time the user makes a change, aka we can send data asynchronously through an HTTP request. **This made our applications faster and vastly improved user experience!**
+###AJAX ERA:
+(Asynchronous JavaScript and XML) consists of small exchanges of data from the client to the the server, so that the entire web page does not have to be reloaded each time the user makes a change, aka we can send data asynchronously through an HTTP request. **This made our applications faster and vastly improved user experience!**
 
--POST AJAX ERA(ish): A lot of Front End Frameworks today Angular, Backbone, Meteor, etc.. help with making Ajax requests easier for us as developers. However, on applications that use real time data, such as real time gaming, the continuous opening and closing of ajax http requests creates a lot of overhead, and for certain applications, especially those that want rapid responses or real time interactions or display streams of data, it can be a difficult process to simulate
+###POST AJAX ERA(ish):
+A lot of Front End Frameworks today Angular, Backbone, Meteor, etc.. help with making Ajax requests easier for us as developers. However, on applications that use real time data, such as real time gaming, the continuous opening and closing of ajax http requests creates a lot of overhead, and for certain applications, especially those that want rapid responses or real time interactions or display streams of data, it can be a difficult process to simulate
 
-## What are WebSockets?
+##What are WebSockets?
 
 WebSockets are a TCP based Protocol and API through JavaScript that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed.
 
 **Turn & Talk to your Neighbor: What do think this means and why might we use it in our applications?**
 
--Once a connection is established, it stays open as long as needed. Ajax is a one-way request that's always initiated by the client, and when the server has sent the response, the connection will close.
+*Once a connection is established, it stays open as long as needed. Ajax is a one-way request that's always initiated by the client, and when the server has sent the response, the connection will close.
 
--However with WebSockets, both the client and server can send requests and the connection is kept open.
+*However with WebSockets, both the client and server can send requests and the connection is kept open.
 
--As you can imagine, this is pretty powerful when we need to create applications that require real-time data.
+*As you can imagine, this is pretty powerful when we need to create applications that require real-time data.
+
+![alt tag](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwj45bq_m5TKAhUE5SYKHXQ-AucQjRwIBw&url=http%3A%2F%2Fwww.slideshare.net%2FVikGamov%2Fwebsockets-the-current-state-of-the-most-valuable-html5-api-for-java-developers%2F6-WHAT_IS_WEBSOCKETS_WEB_SOCKETSTANDARD&psig=AFQjCNE7DnKdx4V2Mz6wYw9jqNwXEYIyqw&ust=1452136261173709)
 
 ![alt tag](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiS2PbimZTKAhUMRyYKHWHaCRcQjRwIBw&url=http%3A%2F%2Fwww.websocket.org%2Fquantum.html&bvm=bv.110151844,d.dmo&psig=AFQjCNERERsZuzus5hmQjlDPiAfyfeVOng&ust=1452135821733297)
 
@@ -35,10 +40,10 @@ WebSockets are a TCP based Protocol and API through JavaScript that establishes 
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_Communication%20is%20usually%20unsynchronized%2C%20i.e.%20the%20client%20requests%2C%20the%20server%20responds%20-%20New%20Page1.png)
 
 
-**Main Advantages**
-•	Extremely Fast
-•	Bi-directional messages between Server and Client
-•	Connection stays open as long as needed(State is persisted in Application)
+###Main Advantages
+*Extremely Fast
+*Bi-directional messages between Server and Client
+*Connection stays open as long as needed(State is persisted in Application)
 
 Below, we are going to be using one resource available, Socket.io which allows us to easily establish a WebSocket in our application. Please note there are MANY RESOURCES available to establish WebSockets connections OR approach the problem of creating Real-Time-Web-Applications, but in the context of this lesson we are going to be just focusing on one.
 
@@ -126,6 +131,7 @@ In Summary, we have a lot of resources available as developers to send data over
 Other solutions worth looking into are Firebase, SailsJS, SocketStream, Meteor Framework built on top of Node.js, and many others. As we continue to build more applications that rely on real-time data, it appears WebSockets could be a useful resource in helping us accomplish our domain.
 
 ##Additional Resources
+
 
 http://www.leggetter.co.uk/2013/12/09/choosing-realtime-web-app-tech-stack.html
 
