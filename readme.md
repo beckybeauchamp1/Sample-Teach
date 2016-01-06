@@ -1,10 +1,10 @@
 #Real-Time-Web-Applications
 
 ##Learning Objectives:
-•	Explain the concept of WebSockets
-•	Describe the differences between Ajax and WebSockets
-•	Explain why we might use WebSockets in our application
-•	Implement Socket.io to create an Instant Chat Messaging App
+- Explain the concept of WebSockets
+- Describe the differences between Ajax and WebSockets
+- Explain why we might use WebSockets in our application
+- Implement Socket.io to create an Instant Chat Messaging App
 
 ##Ajax Recap
 
