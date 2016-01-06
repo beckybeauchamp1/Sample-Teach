@@ -1,53 +1,55 @@
-
-#Real Time Web Applications
-
-In this lesson, we will be introducing the concept of WebSockets and comparing them to Ajax in creating Real Time Web Applications
+#Real-Time-Web-Applications
 
 ##Learning Objectives:
-
 •	Explain the concept of WebSockets
 •	Describe the differences between Ajax and WebSockets
 •	List the advantages to using WebSockets in our application
-•	Implement Chat Messaging Application using Socket.io
+•	Implement Socket.io to create an Instant Chat Messaging App
 
 ##Ajax Recap
 
-**We have been talking a lot about Ajax throughout this course, can someone remind to me why it's relevant and  important in the applications we have been developing?**
+**We have been talking a lot about Ajax throughout this course, can someone remind to me why it's relevant and important in the applications we have been developing?**
 
--Before Ajax, any user interaction with a webpage or web application required an updated version of the page to be sent to the browser and rendered a full new html page. Very slow, bad user experience.
+-PRE-AJAX ERA: any user interaction with a webpage or web application required an updated version of the page to be sent to the browser and rendered a full new html page. **This was very slow, and a bad user experience!**
 
--Ajax was introduced-think of Google Maps as an example
+-AJAX ERA: (Asynchronous JavaScript and XML) consists of small exchanges of data from the client to the the server, so that the entire web page does not have to be reloaded each time the user makes a change, aka we can send data asynchronously through an HTTP request. **This made our applications faster and vastly improved user experience!**
 
--Ajax, stands for Asynchronous JavaScript and XML, and consists of small exchanges of data from the client to the the server, so that the entire web page does not have to be reloaded each time the user makes a change, aka we can send data asynchrously through an HTTP request
+-POST AJAX ERA(ish): A lot of Front End Frameworks today Angular, Backbone, Meteor, etc.. help with making Ajax requests easier for us as developers. However, on applications that use real time data, such as real time gaming, the continuous opening and closing of ajax http requests creates a lot of overhead, and for certain applications, especially those that want rapid responses or real time interactions or display streams of data, it can be a difficult process to simulate
 
--As developers we want a way to make requests to the server from the client side without a full page refresh, Ultimately to make our applications faster and improve user experience.
+## What are WebSockets?
 
-**But what if our application needs to provide real-time updates? How would we go about updating our view to mirror changes from our backend more seamlessly?**
+WebSockets are a TCP based Protocol and API through JavaScript that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed.
 
-A lot of Front End Frameworks including BackBone and Angular help with making Ajax requests easier for us as developers, but there is another resource available through HTML5 called WebSockets
+**Turn & Talk to your Neighbor: What do think this means and why might we use it in our applications?**
 
-##What are Web Sockets?
+-Once a connection is established, it stays open as long as needed. Ajax is a one-way request that's always initiated by the client, and when the server has sent the response, the connection will close.
 
-WebSockets are a TCP based Protocol application that establishes a single, bi-directional connection between the client and server, allowing full duplex, persistent messages to be instantly distributed. Once a connection is established, it stays open as long as needed.
+-However with WebSockets, both the client and server can send requests and the connection is kept open.
 
-**Can Someone Explain to me again how an Ajax Request Lifecycle** (**hint, starting with a request from the ____**)
+-As you can imagine, this is pretty powerful when we need to create applications that require real-time data.
 
-Ajax is a one-way request that's always inititated by the client, and when the server has sent the response, the connection will close. However with WebSockets both the client and server can send requests an the connection is kept open. At a high level-WebSockets are built on the TCP protocol, another layer of abstration in the TCP/IP model which is a stateful protocol, we can accomplish this connection.
+![alt tag](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiS2PbimZTKAhUMRyYKHWHaCRcQjRwIBw&url=http%3A%2F%2Fwww.websocket.org%2Fquantum.html&bvm=bv.110151844,d.dmo&psig=AFQjCNERERsZuzus5hmQjlDPiAfyfeVOng&ust=1452135821733297)
 
-As you can imagine, this is pretty powerful when we need to create applications that require real-time data.
+![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_unsynchronised%20communication%20-%20New%20Page.png)
+
+![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_Communication%20is%20usually%20unsynchronized%2C%20i.e.%20the%20client%20requests%2C%20the%20server%20responds%20-%20New%20Page1.png)
+
 
 **Main Advantages**
-•	Easily Transfer DataTypes
 •	Extremely Fast
-•	Bi-directional connection
+•	Bi-directional messages between Server and Client
+•	Connection stays open as long as needed(State is persisted in Application)
 
-Below, we are going to be using one resource available, Socket.io which allows us to easily establish a WebSocket in our application. Please note there are MANY resources available to establish WebSockets connections, but in the context of this lesson we are going to be just focusing on one.
-
-We are going to be using Nodejs and Expressjs along side Socket.io to build a simple chat messaging application. The starter code for this lesson is available here: Please fork and clone this repo.
+Below, we are going to be using one resource available, Socket.io which allows us to easily establish a WebSocket in our application. Please note there are MANY RESOURCES available to establish WebSockets connections OR approach the problem of creating Real-Time-Web-Applications, but in the context of this lesson we are going to be just focusing on one.
 
 ##We Do: Implement Chat Messaging App
 
-The starter code contains all of the dependencies needed for this application. Please clone it down to your local repositories.
+We are going to be using Nodejs and Express.js along side Socket.io to build a simple chat messaging application. The starter code for this lesson is available here: Please fork and clone this repo down
+
+Solution Code:
+Starter Code:
+
+Please checkout the starter branch to begin building our application:
 
 **First thing we need to do when starting a node application with existing dependencies**?
 
@@ -70,8 +72,7 @@ io.on("connection", function(socket){
 });
 
 ```
-
-And in our index.html file we need to add both jQuery and socket.io script tags:
+And in our index.html file we need to load our socket.io dependency through adding a script tag.
 
 ```html
 <script src="/socket.io/socket.io.js"></script>
@@ -88,7 +89,7 @@ $(document).ready(function(){
 ```
 Restart your server, and you should see that socket.io has been connected. Now let's actually grab the content of the message input and have append it to the DOM when a user click's send.
 
-**Can Someone remind me how we go out using jQuery to grab values out of a form**?
+**Can Someone remind me how we go about using jQuery to grab values out of a form**?
 
 ```js
 
@@ -116,7 +117,7 @@ With socket.io, .emit method is available which emits an event to the socket ide
 
 Also, we are sending "message" consistently on the client and server, but please note you could name this anything including "pizza" and as long as it's consistent, it will work the same. Socket.io allows you to do this and create custom events.
 
-Finally, at localhost://4000, you should be able to send messages that appear on your application's webpage! That's it for the code along, feel free to expand on this application and look up additional methods through the documentation:
+Finally, on your browser, you should be able to send messages that appear on your application's webpage! That's it for the code along, feel free to expand on this application and look up additional methods through the documentation.
 
 ##Recap
 
