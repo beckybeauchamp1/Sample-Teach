@@ -4,7 +4,7 @@
 - Introduce and Explain WebSockets
 - Describe the differences between Ajax and WebSockets
 - Explain why we might use WebSockets in our application
-- Implement Socket.io to create an Instant Chat Messaging App
+- Implement Socket.io to create an Instant Messaging Chat App
 
 ##Opening Framing
 
