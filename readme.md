@@ -1,7 +1,8 @@
 #Real-Time-Web-Applications
 
 ##Learning Objectives:
-- Explain the concept of WebSockets
+- Recap the importance of Ajax
+- Introduce and Explain WebSockets
 - Describe the differences between Ajax and WebSockets
 - Explain why we might use WebSockets in our application
 - Implement Socket.io to create an Instant Chat Messaging App
@@ -86,7 +87,9 @@ We will be using one available resource Socket.io, which allows us to easily to 
 
 We are building a simple Instant Chat Messaging App using Nodejs and Express.js along side Socket.io. 
 
-- The starter code for this lesson is available here: Please fork and clone this repo down
+- The starter code for this lesson is available here: https://github.com/beckybeauchamp1/Chat-Messaging-App/tree/master
+
+- Please fork and clone this repo down
 
 > What is the first thing we need to do when starting a node application with existing dependencies?
 
@@ -109,6 +112,14 @@ io.on("connection", function(socket){
 });
 
 ```
+Take Note of the .on method:
+
+Two important methods in Socket,io are
+- .on : This is listener.
+- .emit : This invokes and trigger the event.
+
+ 
+
 And in our index.html file we need to load our socket.io dependency by adding a script tag.
 
 ```html
