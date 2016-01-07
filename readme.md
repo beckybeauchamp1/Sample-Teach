@@ -1,13 +1,12 @@
 #Real-Time-Web-Applications
 
 ##Learning Objectives:
-- Recap the importance of Ajax
 - Introduce and Explain WebSockets
 - Describe the differences between Ajax and WebSockets
 - Explain why we might use WebSockets in our application
 - Implement Socket.io to create an Instant Chat Messaging App
 
-##Ajax Recap
+##Opening Framing
 
 > We have been talking a lot about Ajax throughout this course, why is it relevant and important in the applications we have been developing?
 
