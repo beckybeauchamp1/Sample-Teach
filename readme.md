@@ -91,7 +91,11 @@ We will be using one available resource Socket.io, which allows us to easily to 
 
 - The starter code for this lesson is available here: https://github.com/beckybeauchamp1/Chat-Messaging-App/tree/master
 
-- Please fork and clone this repo down
+- Please fork and clone this repo down and checkout the Starter Branch.
+
+```
+$ git checkout Starter-Branch
+```
 
 > What is the first thing we need to do when starting a node application with existing dependencies?
 
