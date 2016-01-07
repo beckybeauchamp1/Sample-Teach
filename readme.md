@@ -85,11 +85,9 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 - Google Star Wars Game: https://lightsaber.withgoogle.com/experience
   - This uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone
 
-##We Do: Implement Instant-Chat Messaging App
+##We Do: Implement Instant-Messaging Chat App
 
-We will be using one available resource Socket.io, which allows us to easily to utlize a WebSocket in our application. It is available as a module with Node.js and we will be using it in a code exercise below. 
-
-We are building a simple Instant Chat Messaging App using Nodejs and Express.js along side Socket.io. 
+We will be using one available resource Socket.io, which allows us to easily to utilize a WebSocket in our application. It is available as a module with Node.js, and we will be using it alongside Express.js today
 
 - The starter code for this lesson is available here: https://github.com/beckybeauchamp1/Chat-Messaging-App/tree/master
 
