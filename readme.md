@@ -54,11 +54,6 @@ Sec-WebSocket-Version: 13
 _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***Connection: upgrade*** header, telling the server that it wants to begin a WebSocket connection_
 
 
-
-![alt tag](https://www.pubnub.com/blog/wp-content/uploads/2014/09/WebSockets-Diagram.png)
-
-
-
 ##WebSockets VS Ajax
 
 - With WebSockets, once a connection is established, it stays open as long as needed. 
