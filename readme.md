@@ -179,9 +179,9 @@ Finally, on your browser, you should be able to send messages that appear on you
 
 ##Additional Resources
 
-Other solutions worth looking into include Firebase, SocketStream, Meteor, Pusher, etc..
+Additional Technologies worth looking into include Firebase, SocketStream, Meteor, Pusher, etc.
 
-Other resources worth reading and looking into include the following:
+Resources for further learning include:
 
 - http://www.leggetter.co.uk/2013/12/09/choosing-realtime-web-app-tech-stack.html
 
