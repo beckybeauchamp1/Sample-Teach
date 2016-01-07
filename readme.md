@@ -8,7 +8,7 @@
 
 ##Opening Framing
 
-> We have been talking a lot about Ajax throughout this course, why is it relevant and important in the applications we have been developing?
+> We have been talking a lot about Ajax the second half of this course, why is it relevant and important in the applications we have been developing?
 
 **PRE-AJAX:**
 - Any user interaction with a webpage or web application required an updated version of the page to be sent to the browser and rendered a full new html page. **This was very slow, and a bad user experience!**
