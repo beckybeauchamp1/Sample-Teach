@@ -98,70 +98,76 @@ We will be using one available resource Socket.io, which allows us to easily to 
 ```
 $ npm install
 ```
-Now that we have all our dependencies install in our Express application, it's time to config socket.io. First, we need to install and save the socket.io module to our package.json file.
+Now that we have all our dependencies installed in our Express application, it's time to config socket.io. First, we need to install and save the socket.io module to our package.json file.
 
 ```
 $ npm install socket.io --save
 ```
 
-In our main application index.js, we need to require socket.io. In this example we are attaching socket.io to an HTTP server listening on port 4000.
+In our main application index.js, we need to require socket.io. In this example we are attaching the socket.io module to an HTTP server listening on port 4000.
 
 ```js
 var io = require("socket.io")(http);
+```
 
+Now, we are going to set an event handler through the .on method in our index.js file that will fire everytime a client socket connects our servers socket.io module. The .on method is acting a a listener for events.
+
+```js
 io.on("connection", function(socket){
-  console.log("Socket.io has been connected!");
+  console.log("A user has been connected!");
 });
 
 ```
-Please Take Note of the .on method. We will be using this several times with socket.io. The other method we will be working with is .emit. 
 
-- .on (Acts as a listener for events)
-- .emit (Invokes and trigger the event)
-
-
-And in our index.html file we need to load our socket.io dependency by adding a script tag.
+Furthermore, in our index.html file on the client side we need to load our socket.io dependency by adding a script tag.
 
 ```html
 <script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script src="js/script.js"></script>
 ```
-Finally, in our script.js, we need to declare a socket variable to call socket.io:
+In our script.js file, The first thing we need to do is to create a socket connection to our server's socket.io module.
 
 ```js
 $(document).ready(function(){
   var socket = io();
 });
 ```
-Restart your server, and you should see that socket.io has been connected. Great! Now let's grab the content of the message input and have appended it to the DOM when a user clicks send.
+
+Please note since we are using this locally on our machines, we do not need to pass in a port number, but when we are deploying our application you would need to pass in a public domain of the machine your node server is running on.
+
+Now, restart your server, and you should see that a user has been connected. Great! Now let's grab the content of the user's message and have appended it to the DOM. 
 
 ```js
 $("button").on("click", function(){
-  socket.emit("message", $("#msg").val());
+  socket.emit("clientMessage", $("#msg").val());
   $("#msg").val("");
   return false;
 });
 
-socket.on("message", function(msg){
+socket.on("serverMessage", function(msg){
   $(".messages").append($("<li></li>").text(msg));
 });
 ```
-Now we have all the code written on the client side, let's update our index.js file to receive the message on the backend.
+First, we are adding an event listener that will be sending the contents of the users message as a string to our server through our socket. We are calling this message "clientMessage". 
+
+Then, we are setting an event handler that will be called when the client receives an event from the server. The event is called “serverMessage” and we can receive the data that has been passed along with the event through our callback function.
+
+Now we have all the code written on the client side, let's update our index.js file to receive the message on the backend:
 
 ```js
 io.on("connection", function(socket){
-  socket.on('message', function(msg){
-    io.emit("message", msg)
+  socket.on('clientMessage', function(msg){
+    io.emit("serverMessage", msg)
     console.log('message:' + msg);
   });
 });
 ```
-Again, With socket.io, **.emit method** is available which emits an event to the socket identified by the string name to all connected clients. We are listening to events at the same time using **.on method**
+Again, With socket.io, **.emit method** is available which emits an event to the socket to all connected clients. We are listening to events at the same time using **.on method**
 
-Also, we are sending "message" consistently on the client and server, but please note you could name this anything as long as it's consistent between the client and server, it will work the same. 
+Also, we are sending "clientMessage" and "serverMessage" consistently on the client and server, but please note you could name this anything, and as long as it's consistent, it will work the same. 
 
-Finally, on your browser, you should be able to send messages that appear on your application's webpage! That's it for the code along, but feel free to expand on this application and look up additional information through the documentation: https://github.com/socketio/socket.io
+Finally, on your browser, you should be able to send messages that appear on the webpage! That's it for the code along, but feel free to expand on this application and look up additional information through the documentation: https://github.com/socketio/socket.io
 
 ##Summary
 
