@@ -59,7 +59,7 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 
 
 
-###WebSockets VS Ajax
+##WebSockets VS Ajax
 
 - With WebSockets, once a connection is established, it stays open as long as needed. 
 
@@ -68,7 +68,7 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 - With WebSockets, both the client and server can initiate and send requests. Now, the server can decide on its own to send a message to the client and essentially eliminates the need for continuous ajax calls or "polling".
 
 
-###Why would we use WebSockets?
+##Why would we use WebSockets?
 
 - Allows Bi-directional messages between Server and Client
 
