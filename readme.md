@@ -31,7 +31,7 @@ WebSockets are a TCP based Protocol and API that establishes a single, bi-direct
 
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_unsynchronised%20communication%20-%20New%20Page.png)
 
-**_Traditional Request-Response Client-Server Model_**
+**_Traditional Request-Response Cycle using HTTP & REST_**
 
 
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_Communication%20is%20usually%20unsynchronized%2C%20i.e.%20the%20client%20requests%2C%20the%20server%20responds%20-%20New%20Page1.png)
@@ -55,6 +55,7 @@ Sec-WebSocket-Version: 13
 _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***Connection: upgrade*** header, telling the server that it wants to begin a WebSocket connection_
 
 
+
 ![alt tag](https://www.pubnub.com/blog/wp-content/uploads/2014/09/WebSockets-Diagram.png)
 
 
@@ -65,7 +66,7 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 
 - With Ajax, it's is a one-way request that's always initiated by the client, and when the server has sent the response, the connection will close.
 
-- With WebSockets, both the client and server can initiate and send requests. Now, the server can decide on its own to send a message to the client and essentially eliminates the need for continous ajax calls or "polling".
+- With WebSockets, both the client and server can initiate and send requests. Now, the server can decide on its own to send a message to the client and essentially eliminates the need for continuous ajax calls or "polling".
 
 
 ###Why would we use WebSockets?
@@ -83,7 +84,7 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 - Stock Trader Application: http://demo.kaazing.com/forex/
 
 - Google Star Wars Game: https://lightsaber.withgoogle.com/experience
-  - This uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone:
+  - This uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone
 
 ##We Do: Implement Instant-Chat Messaging App
 
