@@ -54,15 +54,19 @@ Sec-WebSocket-Version: 13
 ```
 _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***Connection: upgrade*** header, telling the server that it wants to begin a WebSocket connection_
 
+
+![alt tag](https://www.pubnub.com/blog/wp-content/uploads/2014/09/WebSockets-Diagram.png)
+
+
+
 ###WebSockets VS Ajax
 
 - With WebSockets, once a connection is established, it stays open as long as needed. 
 
 - With Ajax, it's is a one-way request that's always initiated by the client, and when the server has sent the response, the connection will close.
 
-- However with WebSockets, both the client and server can initiate and send requests
+- With WebSockets, both the client and server can initiate and send requests. Now, the server can decide on its own to send a message to the client and essentially eliminates the need for continous ajax calls or "polling".
 
-- Allows a sort of channel that remains open between the client and the server. The browser and the server stay connected to each other and can exchange messages, in one direction and the other, through this channel. Now, the server can decide on its own to send a message to the client
 
 ###Why would we use WebSockets?
 
@@ -70,16 +74,16 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 
 - Speed, it's Fast!
 
-- Open Connection between Client and Server
+- Open Connection between Client and Server (Maintains State)
 
 - Useful for Real Time Applications
 
 ***Examples:***
 
-- Real Time Stock Watcher: http://demo.kaazing.com/forex/
+- Stock Trader Application: http://demo.kaazing.com/forex/
 
-- Google Star Wars Game using uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone:
-https://lightsaber.withgoogle.com/experience
+- Google Star Wars Game: https://lightsaber.withgoogle.com/experience
+  - This uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone:
 
 ##We Do: Implement Instant-Chat Messaging App
 
@@ -112,13 +116,11 @@ io.on("connection", function(socket){
 });
 
 ```
-Take Note of the .on method:
+Please Take Note of the .on method. We will be using this several times with socket.io. The other method we will be working with is .emit. 
 
-Two important methods in Socket,io are
-- .on : This is listener.
-- .emit : This invokes and trigger the event.
+- .on (Acts as a listener for events)
+- .emit (Invokes and trigger the event)
 
- 
 
 And in our index.html file we need to load our socket.io dependency by adding a script tag.
 
@@ -134,7 +136,7 @@ $(document).ready(function(){
   var socket = io();
 });
 ```
-Restart your server, and you should see that socket.io has been connected. Great! Now let's grab the content of the message input and have append it to the DOM when a user click's send.
+Restart your server, and you should see that socket.io has been connected. Great! Now let's grab the content of the message input and have appended it to the DOM when a user clicks send.
 
 ```js
 $("button").on("click", function(){
@@ -147,7 +149,7 @@ socket.on("message", function(msg){
   $(".messages").append($("<li></li>").text(msg));
 });
 ```
-Now we have all the code written on the client side, let's update our back end to receive the message.
+Now we have all the code written on the client side, let's update our index.js file to receive the message on the backend.
 
 ```js
 io.on("connection", function(socket){
@@ -157,9 +159,9 @@ io.on("connection", function(socket){
   });
 });
 ```
-With socket.io, **.emit method** is available which emits an event to the socket identified by the string name to all connected clients. We are listening to events at the same time using **.on method**
+Again, With socket.io, **.emit method** is available which emits an event to the socket identified by the string name to all connected clients. We are listening to events at the same time using **.on method**
 
-Also, we are sending "message" consistently on the client and server, but please note you could name this anything as long as it's consistent, it will work the same. 
+Also, we are sending "message" consistently on the client and server, but please note you could name this anything as long as it's consistent between the client and server, it will work the same. 
 
 Finally, on your browser, you should be able to send messages that appear on your application's webpage! That's it for the code along, but feel free to expand on this application and look up additional information through the documentation: https://github.com/socketio/socket.io
 
@@ -173,13 +175,17 @@ Finally, on your browser, you should be able to send messages that appear on you
 
 - There are MANY RESOURCES available to help us create a WebSocket connection OR approach simulating real time data in our applications, but it entirely depends on our domain and what problem we are trying to solve when choosing a technology to implement in our applications. 
 
-- As we continue to build more applications that rely on real-time data, it appears WebSockets could be a useful resource or nonetheless, hopefully provoke thought into possible ways of trying to achieve a real time application experience for our users. 
+- As we continue to build more applications that rely on real-time data, it appears WebSockets could be a useful resource or nonetheless, hopefully thought provoking into possible ways of trying to achieve a real time application experience for our users. 
 
 ##Additional Resources
 
-Other solutions worth looking into include Firebase, SocketStream, Meteor, Pusher, etc....
+Other solutions worth looking into include Firebase, SocketStream, Meteor, Pusher, etc..
+
+Other resources worth reading and looking into include the following:
 
 - http://www.leggetter.co.uk/2013/12/09/choosing-realtime-web-app-tech-stack.html
+
+- https://www.smashingmagazine.com/2015/01/why-ajax-isnt-enough/
 
 - http://blog.arungupta.me/rest-vs-websocket-comparison-benchmarks/
 
