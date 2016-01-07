@@ -134,9 +134,11 @@ $(document).ready(function(){
 });
 ```
 
-Please note since we are using this locally on our machines, we do not need to pass in a port number, but when we are deploying our application you would need to pass in a public domain of the machine your node server is running on.
+Please note since we are using this locally on our machines, we do not need to pass in a port number, but when we are deploying our application you would need to pass in a public domain.
 
-Now, restart your server, and you should see that a user has been connected. Great! Now let's grab the content of the user's message and have appended it to the DOM. 
+Now, restart your server, and you should see that a user has been connected. 
+
+Great! Now let's grab the content of the user's message and have appended it to the DOM. 
 
 ```js
 $("button").on("click", function(){
