@@ -92,7 +92,7 @@ We will be using one available resource Socket.io, which allows us to easily to 
 $ git checkout Starter-Branch
 ```
 
-> What is the first thing we need to do when starting a node application with existing dependencies?
+> What is the first thing we need to do when starting an express application with existing dependencies?
 
 ```
 $ npm install
