@@ -17,7 +17,7 @@
 - (Asynchronous JavaScript and XML) consists of small exchanges of data from the client to the the server, so that the entire web page does not have to be reloaded each time the user makes a change, aka we can send data asynchronously through an HTTP request. **This made our applications faster and vastly improved user experience!**
 
 **POST AJAX:**
-- A lot of Front End Frameworks today Angular, Backbone, Meteor, etc.. help with making Ajax requests easier for us as developers. However, on applications that use real time data, such as real time gaming, the continuous opening and closing of ajax http requests creates a lot of overhead, and for certain applications, especially those that want rapid responses or real time interactions or display streams of data, it can be a difficult process to simulate
+- A lot of Front End Frameworks today like Angular and Backbone help with making Ajax requests easier for us as developers. However, on applications that use real time data, such as real time gaming, the continuous opening and closing of ajax http requests creates a lot of overhead, and for certain applications, especially those that want rapid responses or real time interactions or display streams of data, it can be a difficult process to simulate
 
 ##What are WebSockets?
 
@@ -132,9 +132,6 @@ $(document).ready(function(){
   var socket = io();
 });
 ```
-
-Please note since we are using this locally on our machines, we do not need to pass in a http://localhost etc..., but when we are deploying our application you would need to pass in the public domain IP for our remote server
-
 Now, restart your server, and you should see that a user has been connected. 
 
 Great! Now let's grab the content of the user's message and have appended it to the DOM. 
