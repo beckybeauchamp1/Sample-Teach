@@ -2,9 +2,9 @@
 
 ##Learning Objectives:
 - Introduce and Explain WebSockets
-- Describe the differences between Ajax and WebSockets
+- Highlight the differences between Ajax and WebSockets
 - Explain why we might use WebSockets in our application
-- Implement Socket.io to create an Instant Messaging Chat App
+- Create an Instant Messaging Chat App using Socket.io
 
 ##Opening Framing
 
