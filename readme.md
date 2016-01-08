@@ -109,7 +109,7 @@ In our main application index.js, we need to require socket.io. In this example 
 var io = require("socket.io")(http);
 ```
 
-Now, we are going to set an event handler through the .on method in our index.js file that will fire everytime a client socket connects our servers socket.io module. The .on method is acting a a listener for events.
+Now, we are going to set an event handler through the .on method in our index.js file that will fire everytime a client socket connects our servers socket.io module. The .on method is acting as a listener for events.
 
 ```js
 io.on("connection", function(socket){
