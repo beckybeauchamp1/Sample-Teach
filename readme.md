@@ -78,7 +78,7 @@ _This HTTP GET request carries with it a ***Upgrade: websocket*** header and ***
 - Stock Trader Application: http://demo.kaazing.com/forex/
 
 - Google Star Wars Game: https://lightsaber.withgoogle.com/experience
-  - This uses WebRTC and WebSocket to allow for the real-time communication between the player's desktop and smartphone
+  - This uses WebRTC and WebSocket to allow for the real-time communication between the browser on the player's desktop and smartphone
 
 ##We Do: Implement Instant-Messaging Chat App
 
