@@ -30,7 +30,7 @@ WebSockets are a TCP based Protocol and API that establishes a single, bi-direct
 
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_unsynchronised%20communication%20-%20New%20Page.png)
 
-**_Traditional Request-Response Cycle using HTTP & REST_**
+**_Traditional Request-Response Cycle using HTTP**
 
 
 ![alt tag](https://sdz-upload.s3.amazonaws.com/prod/upload/p3ch1_Communication%20is%20usually%20unsynchronized%2C%20i.e.%20the%20client%20requests%2C%20the%20server%20responds%20-%20New%20Page1.png)
