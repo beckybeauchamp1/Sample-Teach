@@ -133,7 +133,7 @@ $(document).ready(function(){
 });
 ```
 
-Please note since we are using this locally on our machines, we do not need to pass in a port number, but when we are deploying our application you would need to pass in a public domain.
+Please note since we are using this locally on our machines, we do not need to pass in a http://localhost etc..., but when we are deploying our application you would need to pass in the public domain IP for our remote server
 
 Now, restart your server, and you should see that a user has been connected. 
 
